@@ -1,0 +1,286 @@
+/* ---------- Colour tokens ---------- */
+:root {
+  --ink: #1b2a41;
+  --paper: #f5f8fb;
+  --mint: #cfeae1;
+  --kettle: #2f6fed;
+  --coffee: #5a3a29;
+  --white: #ffffff;
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Navbar (flexbox) ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 20px 8%;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--kettle);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.nav-links a:hover {
+  border-color: var(--kettle);
+}
+
+/* ---------- Hero (flexbox) ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 8% 80px;
+}
+
+.hero-text {
+  flex: 1; /* takes half the space */
+}
+
+.hero-text h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  max-width: 44ch;
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--kettle);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  background: var(--ink);
+  transform: translateY(-3px);
+}
+
+.hero-art {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--mint);
+  border-radius: 24px;
+  min-height: 380px;
+}
+
+/* ---------- Coffee cup drawn with CSS ---------- */
+.cup-scene {
+  position: relative;
+  width: 200px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cup {
+  position: relative;
+  width: 140px;
+  height: 100px;
+  background: var(--white);
+  border-radius: 0 0 70px 70px;
+  border-top: 14px solid var(--coffee); /* the coffee surface */
+}
+
+.handle {
+  position: absolute;
+  right: -34px;
+  top: 8px;
+  width: 44px;
+  height: 50px;
+  border: 12px solid var(--white);
+  border-left: none;
+  border-radius: 0 40px 40px 0;
+}
+
+.saucer {
+  width: 190px;
+  height: 14px;
+  background: var(--white);
+  border-radius: 50%;
+  margin-top: -2px;
+  box-shadow: 0 8px 14px rgba(27, 42, 65, 0.15);
+}
+
+/* ---------- Steam animation (the one moving thing on the page) ---------- */
+.steam {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 18px;
+}
+
+.steam span {
+  display: block;
+  width: 10px;
+  height: 56px;
+  background: var(--white);
+  border-radius: 50%;
+  filter: blur(6px);
+  opacity: 0;
+  animation: rise 3s ease-in-out infinite;
+}
+
+.steam span:nth-child(2) {
+  animation-delay: 0.8s;
+  height: 70px;
+}
+
+.steam span:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(40px) scaleX(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-30px) scaleX(2.2);
+    opacity: 0;
+  }
+}
+
+/* ---------- Menu cards (flexbox + wrap) ---------- */
+.menu {
+  padding: 60px 8%;
+}
+
+.menu h2,
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* cards drop to the next line on small screens */
+  gap: 24px;
+}
+
+.card {
+  flex: 1 1 240px; /* grow, shrink, start at 240px */
+  background: var(--white);
+  padding: 28px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--kettle);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
+.price {
+  margin-top: auto; /* pushes price to the bottom of every card */
+  font-weight: 800;
+  color: var(--kettle);
+  font-size: 1.2rem;
+}
+
+/* ---------- About ---------- */
+.about {
+  padding: 40px 8% 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-box {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px;
+  border-radius: 20px;
+  max-width: 720px;
+}
+
+.about-box h2 {
+  margin-bottom: 14px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 28px 8%;
+  border-top: 2px solid var(--mint);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column; /* stack text above the cup */
+  }
+  .hero-art {
+    width: 100%;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .steam span {
+    animation: none;
+    opacity: 0.5;
+  }
+}
