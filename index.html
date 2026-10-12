@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Kettle Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <!-- NAVBAR: flexbox with space-between -->
+  <header class="navbar">
+    <a href="#" class="logo">Blue Kettle</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO: text on the left, animated cup on the right -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Slow coffee for fast mornings.</h1>
+      <p>Small-batch beans, roasted every Tuesday and poured by people who remember your order.</p>
+      <a href="#menu" class="btn">See today's menu</a>
+    </div>
+
+    <div class="hero-art">
+      <div class="cup-scene">
+        <div class="steam">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="cup">
+          <div class="handle"></div>
+        </div>
+        <div class="saucer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU: flex-wrap cards -->
+  <section class="menu" id="menu">
+    <h2>On the counter today</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Flat White</h3>
+        <p>Double ristretto with silky steamed milk.</p>
+        <span class="price">₹220</span>
+      </article>
+      <article class="card">
+        <h3>Cold Brew</h3>
+        <p>Steeped for 18 hours, served over one big ice cube.</p>
+        <span class="price">₹260</span>
+      </article>
+      <article class="card">
+        <h3>Filter Coffee</h3>
+        <p>South Indian style, frothy and strong.</p>
+        <span class="price">₹120</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-box">
+      <h2>Roasted in small batches</h2>
+      <p>We buy from three farms and roast only what we can sell in a week. That is why the bag you take home was roasted days ago, not months.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="visit">
+    <p>12 Church Street, Bengaluru</p>
+    <p>Open daily, 7 am to 9 pm</p>
+  </footer>
+
+</body>
+</html>
